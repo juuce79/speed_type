@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!-- Frank Lloyd Curwen -->
+<!-- frcu2200 -->
+<!-- frcu2200@student.miun.se -->
+
+<!-- document head including language, viewport for responsive design,
+     title and links to favicon, css stylesheet and JavaScript -->
+<html lang = "en">
+    <head>
+        <meta charset = "utf-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <title>Simple Speed Typer</title>
+        <!-- <link rel="icon" type="image/svg" href="img/favicon.svg"> -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" media="screen, print" href="css/style.css"> -->
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body class="container">
+        <header>
+            <h1 class="heading">Simple Speed Typing</h1>
+        </header>
+        <!-- <div class="container">
+            <div class="heading">
+            Simple Speed Typing
+            </div> -->
+        <main>
+            
+        <!-- </main> -->
+            <section class="header">
+                <div class="wpm">
+                    <div class="header_text">WPM</div>
+                    <div class="curr_wpm">100</div>
+                </div>
+                <div class="cpm">
+                    <div class="header_text">CPM</div>
+                    <div class="curr_cpm">100</div>
+                </div>
+                <div class="errors">
+                    <div class="header_text">Errors</div>
+                    <div class="curr_errors">0</div>
+                </div>
+                <div class="timer">
+                    <div class="header_text">Time</div>
+                    <div class="curr_time">60s</div>
+                </div>
+                <div class="accuracy">
+                    <div class="header_text">% Accuracy</div>
+                    <div class="curr_accuracy">100</div>
+                </div>
+            </section>
+        
+            <section class="quote">
+            Click on the area below to start the game.
+            </section>
+            <textarea class="input_area"
+            placeholder="start typing here..."
+            oninput="processCurrentText()"
+            onfocus="startGame()">
+            </textarea>
+            <button class="restart_btn"
+            onclick="resetValues()">
+            Restart
+            </button>
+        </main>
+    
+    </body>
+</html>
