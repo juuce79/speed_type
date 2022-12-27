@@ -1,184 +1,190 @@
-// define the time limit
-let TIME_LIMIT = 60;
- 
-// define quotes to be used
-let quotes_array = [
-  "Push yourself, because no one else is going to do it for you.",
-  "Failure is the condiment that gives success its flavor.",
-  "Wake up with determination. Go to bed with satisfaction.",
-  "It's going to be hard, but hard does not mean impossible.",
-  "Learning never exhausts the mind.",
-  "The only way to do great work is to love what you do."
-];
- 
-// selecting required elements
-let timer_text = document.querySelector(".curr_time");
-let accuracy_text = document.querySelector(".curr_accuracy");
-let error_text = document.querySelector(".curr_errors");
-let cpm_text = document.querySelector(".curr_cpm");
-let wpm_text = document.querySelector(".curr_wpm");
-let quote_text = document.querySelector(".quote");
-let input_area = document.querySelector(".input_area");
-let restart_btn = document.querySelector(".restart_btn");
-let cpm_group = document.querySelector(".cpm");
-let wpm_group = document.querySelector(".wpm");
-let error_group = document.querySelector(".errors");
-let accuracy_group = document.querySelector(".accuracy");
- 
-let timeLeft = TIME_LIMIT;
-let timeElapsed = 0;
-let total_errors = 0;
-let errors = 0;
-let accuracy = 0;
-let characterTyped = 0;
-let current_quote = "";
-let quoteNo = 0;
-let timer = null;
+const typingText = document.querySelector(".typing-text p"),
+inpField = document.querySelector(".wrapper .input-field"),
+tryAgainBtn = document.querySelector(".content button"),
+timeTag = document.querySelector(".time span b"),
+mistakeTag = document.querySelector(".mistake span"),
+wpmTag = document.querySelector(".wpm span"),
+gwpmTag = document.querySelector(".gwpm span"),
+cpmTag = document.querySelector(".cpm span"),
+gcpmTag = document.querySelector(".gcpm span"),
+accuracy = document.querySelector(".accuracy span");
 
-function updateQuote() {
-    quote_text.textContent = null;
-    current_quote = quotes_array[quoteNo];
-   
-    // separate each character and make an element
-    // out of each of them to individually style them
-    current_quote.split('').forEach(char => {
-      const charSpan = document.createElement('span')
-      charSpan.innerText = char
-      quote_text.appendChild(charSpan)
-    })
-   
-    // roll over to the first quote
-    if (quoteNo < quotes_array.length - 1)
-      quoteNo++;
-    else
-      quoteNo = 0;
-  }
+let timer,
+maxTime = 60,
+timeLeft = maxTime,
+charIndex = mistakes = isTyping = 0;
 
-  function processCurrentText() {
- 
-    // get current input text and split it
-    curr_input = input_area.value;
-    curr_input_array = curr_input.split('');
-   
-    // increment total characters typed
-    characterTyped++;
-   
-    errors = 0;
-   
-    quoteSpanArray = quote_text.querySelectorAll('span');
-    quoteSpanArray.forEach((char, index) => {
-      let typedChar = curr_input_array[index]
-   
-      // character not currently typed
-      if (typedChar == null) {
-        char.classList.remove('correct_char');
-        char.classList.remove('incorrect_char');
-   
-        // correct character
-      } else if (typedChar === char.innerText) {
-        char.classList.add('correct_char');
-        char.classList.remove('incorrect_char');
-   
-        // incorrect character
-      } else {
-        char.classList.add('incorrect_char');
-        char.classList.remove('correct_char');
-   
-        // increment number of errors
-        errors++;
-      }
+function loadParagraph() {
+    const ranIndex = Math.floor(Math.random() * paragraphs.length);
+    // var paraArray = {
+    //     volvo: "my text one",
+    //     saab: "my text two",
+    //     mercedes: "my text three",
+    //     audi: "my text four"
+    // };
+    // const paraG = ""
+    // const texVal = document.getElementById("cars");
+    // if (textVal === volvo) {
+    //     paraG = paraArray["volvo"]
+    // }
+    
+    typingText.innerHTML = "";
+    console.log('Sentence: '+paragraphs[ranIndex]);
+    console.log('Total words: '+getWordCount(paragraphs[ranIndex]));
+    paragraphs[ranIndex].split("").forEach(char => {
+        let span = `<span>${char}</span>`
+        typingText.innerHTML += span;
     });
-   
-    // display the number of errors
-    error_text.textContent = total_errors + errors;
-   
-    // update accuracy text
-    let correctCharacters = (characterTyped - (total_errors + errors));
-    let accuracyVal = ((correctCharacters / characterTyped) * 100);
-    accuracy_text.textContent = Math.round(accuracyVal);
-   
-    // if current text is completely typed
-    // irrespective of errors
-    if (curr_input.length == current_quote.length) {
-      updateQuote();
-   
-      // update total errors
-      total_errors += errors;
-   
-      // clear the input area
-      input_area.value = "";
-    }
-  }
+    typingText.querySelectorAll("span")[0].classList.add("active");
+    document.addEventListener("keydown", () => inpField.focus());
+    typingText.addEventListener("click", () => inpField.focus());
+}
 
-  function startGame() {
- 
-    resetValues();
-    updateQuote();
-   
-    // clear old and start a new timer
+// function loadParagraph() {
+//     const paraG = document.getElementById('cars');
+//     paragraphTitles.addEventListener('change', () => {
+//         const selectedOption = paragraphTitles.value;
+//         if (selectedOption === 'volvo') {
+//             typingText.innerHTML = 'This is the text for paragraph 1';
+//         }
+//         else if (selectedOption === 'saab') {
+//             typingText.innerHTML = 'This is the text for paragraph 2';
+//         }
+//         else if (selectedOption === 'mercedes') {
+//             typingText.innerHTML = 'This is the text for paragraph 3';
+//         }
+//         else if (selectedOption === 'audi') {
+//             typingText.innerHTML = 'This is the text for paragraph 4';
+//         }
+
+//     // typingText.innerHTML = "";
+//     console.log('Sentence: '+ paraG);
+//     console.log('Total words: '+getWordCount(paraG));
+//     paraG.split("").forEach(char => {
+//         let span = `<span>${char}</span>`
+//         typingText.innerHTML += span;
+//     });
+//     typingText.querySelectorAll("span")[0].classList.add("active");
+//     document.addEventListener("keydown", () => inpField.focus());
+//     typingText.addEventListener("click", () => inpField.focus());
+// }}
+
+// function loadParagraph() {
+//     // Get a reference to the dropdown menu and text box
+//     const paragraphTitles = document.getElementById('cars');
+//     const paragraphText = document.getElementById('paragraph-text');
+
+//     // Add an event listener to the dropdown menu to update the text box
+//     // when a new option is selected
+//     paragraphTitles.addEventListener('change', () => {
+//     // Get the value of the selected option
+//         const selectedOption = paragraphTitles.value;
+
+//     // Set the value of the text box to the corresponding paragraph
+//         if (selectedOption === 'volvo') {
+//             paragraphText.value = 'This is the text for paragraph 1';
+//         } else if (selectedOption === 'saab') {
+//             paragraphText.value = 'This is the text for paragraph 2';
+//         } else if (selectedOption === 'mercedes') {
+//             paragraphText.value = 'This is the text for paragraph 3';
+//         }
+        
+//         typingText.innerHTML = "";
+//         console.log('Sentence: '+ paragraphText);
+//         console.log('Total words: '+ getWordCount(paragraphText));
+//         paragraphText.split("").forEach(char => {
+//             let span = `<span>${char}</span>`
+//             typingText.innerHTML += span;
+//         });
+//         typingText.querySelectorAll("span")[0].classList.add("active");
+//         document.addEventListener("keydown", () => inpField.focus());
+//         typingText.addEventListener("click", () => inpField.focus());
+//     });
+// }
+
+function getWordCount(str) {
+    return str.split(' ')
+      .filter(function(n) { return n != '' })
+      .length;
+}
+
+// const sentence = 'Give me the count of all words in this sentence!';
+// console.log('Sentence: '+char);
+// console.log('Total words: '+getWordCount(paragraphs[0]));
+
+function initTyping() {
+    let characters = typingText.querySelectorAll("span");
+    let typedChar = inpField.value.split("")[charIndex];
+    if(charIndex < characters.length - 1 && timeLeft > 0) {
+        if(!isTyping) {
+            new Audio ("sound/timer.mp3").play()
+            timer = setInterval(initTimer, 1000);
+            isTyping = true;
+        }
+        if(typedChar == null) {
+            if(charIndex > 0) {
+                charIndex--;
+                if(characters[charIndex].classList.contains("incorrect")) {
+                    mistakes--;
+                }
+                characters[charIndex].classList.remove("correct", "incorrect");
+            }
+        } else {
+            if(characters[charIndex].innerText == typedChar) {
+                characters[charIndex].classList.add("correct");
+            } else {
+                mistakes++;
+                characters[charIndex].classList.add("incorrect");
+            }
+            charIndex++;
+        }
+        characters.forEach(span => span.classList.remove("active"));
+        characters[charIndex].classList.add("active");
+
+        let wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60);
+        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+        let gwpm = Math.round(((charIndex)  / 5) / (maxTime - timeLeft) * 60);
+        gwpm = gwpm < 0 || !gwpm || gwpm === Infinity ? 0 : gwpm;
+        
+        wpmTag.innerText = wpm;
+        gwpmTag.innerText = gwpm;
+        mistakeTag.innerText = mistakes;
+        cpmTag.innerText = charIndex - mistakes;
+        gcpmTag.innerText = charIndex;
+        accuracy.innerText = Math.round(100 - ((mistakes / charIndex) * 100)) + "%";
+    } else {
+        clearInterval(timer);
+        inpField.value = "";
+    }   
+}
+
+function initTimer() {
+    if(timeLeft > 0) {
+        timeLeft--;
+        timeTag.innerText = timeLeft;
+        let wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60);
+        wpmTag.innerText = wpm;
+        let gwpm = Math.round(((charIndex)  / 5) / (maxTime - timeLeft) * 60);
+        gwpmTag.innerText = gwpm;
+    } else {
+        clearInterval(timer);
+    }
+}
+
+function resetGame() {
+    loadParagraph();
     clearInterval(timer);
-    timer = setInterval(updateTimer, 1000);
-  }
-   
-  function resetValues() {
-    timeLeft = TIME_LIMIT;
-    timeElapsed = 0;
-    errors = 0;
-    total_errors = 0;
-    accuracy = 0;
-    characterTyped = 0;
-    quoteNo = 0;
-    input_area.disabled = false;
-   
-    input_area.value = "";
-    quote_text.textContent = 'Click on the area below to start the game.';
-    accuracy_text.textContent = 100;
-    timer_text.textContent = timeLeft + 's';
-    error_text.textContent = 0;
-    restart_btn.style.display = "none";
-    cpm_group.style.display = "none";
-    wpm_group.style.display = "none";
-  }
+    timeLeft = maxTime;
+    charIndex = mistakes = isTyping = 0;
+    inpField.value = "";
+    timeTag.innerText = timeLeft;
+    wpmTag.innerText = 0;
+    gwpmTag.innerText = 0;
+    mistakeTag.innerText = 0;
+    cpmTag.innerText = 0;
+    gcpmTag.innerText = 0;
+}
 
-  function updateTimer() {
-    if (timeLeft > 0) {
-      // decrease the current time left
-      timeLeft--;
-   
-      // increase the time elapsed
-      timeElapsed++;
-   
-      // update the timer text
-      timer_text.textContent = timeLeft + "s";
-    }
-    else {
-      // finish the game
-      finishGame();
-    }
-  }
-
-  function finishGame() {
-    // stop the timer
-    clearInterval(timer);
-   
-    // disable the input area
-    input_area.disabled = true;
-   
-    // show finishing text
-    quote_text.textContent = "Click on restart to start a new game.";
-   
-    // display restart button
-    restart_btn.style.display = "block";
-   
-    // calculate cpm and wpm
-    cpm = Math.round(((characterTyped / timeElapsed) * 60));
-    wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
-   
-    // update cpm and wpm text
-    cpm_text.textContent = cpm;
-    wpm_text.textContent = wpm;
-   
-    // display the cpm and wpm
-    cpm_group.style.display = "block";
-    wpm_group.style.display = "block";
-  }
+loadParagraph();
+inpField.addEventListener("input", initTyping);
+tryAgainBtn.addEventListener("click", resetGame);

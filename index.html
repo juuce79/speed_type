@@ -6,64 +6,105 @@
 
 <!-- document head including language, viewport for responsive design,
      title and links to favicon, css stylesheet and JavaScript -->
-<html lang = "en">
+<html lang="en">
     <head>
-        <meta charset = "utf-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-        <title>Simple Speed Typer</title>
-        <!-- <link rel="icon" type="image/svg" href="img/favicon.svg"> -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Speed Type</title>
         <link rel="stylesheet" href="css/style.css">
-        <!-- <link rel="stylesheet" media="screen, print" href="css/style.css"> -->
+        <script src="js/texts.js" defer></script>
         <script src="js/main.js" defer></script>
     </head>
-
-    <body class="container">
+    <body>
         <header>
-            <h1 class="heading">Simple Speed Typing</h1>
+            <!-- <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+                <optgroup label="Swedish Cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                </optgroup>
+                <optgroup label="German Cars">
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </optgroup>
+            </select> -->
         </header>
-        <!-- <div class="container">
-            <div class="heading">
-            Simple Speed Typing
-            </div> -->
         <main>
-            
-        <!-- </main> -->
-            <section class="header">
-                <div class="wpm">
-                    <div class="header_text">WPM</div>
-                    <div class="curr_wpm">100</div>
-                </div>
-                <div class="cpm">
-                    <div class="header_text">CPM</div>
-                    <div class="curr_cpm">100</div>
-                </div>
-                <div class="errors">
-                    <div class="header_text">Errors</div>
-                    <div class="curr_errors">0</div>
-                </div>
-                <div class="timer">
-                    <div class="header_text">Time</div>
-                    <div class="curr_time">60s</div>
-                </div>
-                <div class="accuracy">
-                    <div class="header_text">% Accuracy</div>
-                    <div class="curr_accuracy">100</div>
-                </div>
+            <section class="wrapper">
+                <table class="content-box table1">
+                    <tr>
+                        <td class="storyChooser"></td>
+                    </tr>
+                    <tr>
+                        <td class="typing-text">
+                            <input id="paragraph-text" type="text" class="input-field"><p></p>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table2">
+                    <tr class="result-details">
+                        <td id="r1c1" class="time">Time:</td>
+                        <td id="r1c2" class="gwpm">Gross WPM:</td>
+                        <td id="r1c3" class="wpm">Net WPM:</td>
+                        <td id="r1c4" class="gcpm">Gross CPM:</td>
+                    </tr>
+                    <tr class="result-details">
+                        <td id="r2c1" class="time"><span><b>60</b>s</span></td>
+                        <td id="r2c2" class="gwpm"><span>0</span></td>
+                        <td id="r2c3" class="wpm"><span>0</span></td>
+                        <td id="r2c4" class="gcpm"><span>0</span></td>
+                    </tr>
+                    <tr class="result-details">
+                        <td id="r3c1" class="cpm">Net CPM:</td>
+                        <td id="r3c2" class="mistake">Errors:</td>
+                        <td id="r3c3" class="accuracy">Accuracy:</td>
+                        <td id="r3c4" class="button" rowspan="2"><button id="tryButton">Try Again</button></td>
+                    </tr>
+                    <tr class="result-details">
+                        <td id="r4c1" class="cpm"><span>0</span></td>
+                        <td id="r4c2" class="mistake"><span>0</span></td>
+                        <td id="r4c3" class="accuracy"><span>100%</span></td>
+                    </tr>
+                </table>
+                <!-- <table class="content">
+                    <tr class="result-details">
+                        <td class="time">
+                            <p>Time:</p>
+                            <span><b>60</b>s</span>
+                        </td>
+                        <td class="gwpm">
+                            <p>gWPM:</p>
+                            <span>0</span>
+                        </td>
+                        <td class="wpm">
+                            <p>nWPM:</p>
+                            <span>0</span>
+                        </td>
+                        <td class="gcpm">
+                            <p>gCPM:</p>
+                            <span>0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cpm">
+                            <p>nCPM:</p>
+                            <span>0</span>
+                        </td>
+                        <td class="mistake">
+                            <p>Errors:</p>
+                            <span>0</span>
+                        </td>
+                        <td class="mistake">
+                            <p>Accuracy:</p>
+                            <span>0</span>
+                        </td>
+                        <td>
+                            <button>Try Again</button>
+                        </td>
+                    </tr>
+                </table> -->
             </section>
-        
-            <section class="quote">
-            Click on the area below to start the game.
-            </section>
-            <textarea class="input_area"
-            placeholder="start typing here..."
-            oninput="processCurrentText()"
-            onfocus="startGame()">
-            </textarea>
-            <button class="restart_btn"
-            onclick="resetValues()">
-            Restart
-            </button>
         </main>
-    
+        <footer></footer>
     </body>
 </html>
