@@ -17,30 +17,39 @@
     </head>
     <body>
         <header>
-            <!-- <label for="cars">Choose a car:</label>
-            <select name="cars" id="cars">
-                <optgroup label="Swedish Cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                </optgroup>
-                <optgroup label="German Cars">
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </optgroup>
-            </select> -->
         </header>
         <main>
             <section class="wrapper">
+                <label for="setts" >Settings:</label><br>
+                <select name="setts" id="setts">
+                    <option value="">Please select option:</option>
+                    <option value="punct">Correct Case & Punctuation</option>
+                    <option value="noPunct">Lower-Case & No Punctuation</option>
+                </select><br><br>
+                <label for="texts">Choose a text:</label><br>
+                <select name="texts" id="texts" disabled>
+                    <option value="">Please select option:</option>
+                    <option value="stardust">English: Stardust</option>
+                    <option value="love">English: Love</option>
+                    <option value="everlasting">English: Everlasting</option>
+                    <option value="njuta">Svenska: Njuta</option>
+                    <option value="ändring">Svenska: Ändring</option>
+                    <option value="världen">Svenska: Världen</option>
+                </select><br><br>
                 <table class="content-box table1">
                     <tr>
-                        <td class="storyChooser"></td>
-                    </tr>
-                    <tr>
                         <td class="typing-text">
-                            <input id="paragraph-text" type="text" class="input-field"><p></p>
+                            <input type="text" id="paragraph-text" name="paragraph-text" class="input-field"><p></p>
                         </td>
                     </tr>
-                </table>
+                </table><br>
+                <table class="tableCopy">
+                    <tr>
+                        <td class="typing-text2">
+                            <input type="text" id="copy" name="copy" placeholder="type here to begin...">
+                        </td>
+                    </tr>
+                </table><br>
                 <table class="table2">
                     <tr class="result-details">
                         <td id="r1c1" class="time">Time:</td>
@@ -58,51 +67,18 @@
                         <td id="r3c1" class="cpm">Net CPM:</td>
                         <td id="r3c2" class="mistake">Errors:</td>
                         <td id="r3c3" class="accuracy">Accuracy:</td>
-                        <td id="r3c4" class="button" rowspan="2"><button id="tryButton">Try Again</button></td>
+                        <!-- <td id="r3c4" class="button"><button id="resetButton">Reload Page</button></td> -->
+                        <td id="r4c4" rowspan="2"><input type="button" id="mixBut" value="Start"/></td>
                     </tr>
                     <tr class="result-details">
                         <td id="r4c1" class="cpm"><span>0</span></td>
                         <td id="r4c2" class="mistake"><span>0</span></td>
                         <td id="r4c3" class="accuracy"><span>100%</span></td>
+                        <!-- <td id="r4c4" class="button"><button id="playStopButton">Restart / Stop</button></td> -->
+                        <!-- <td id="r4c4"><input type="button" id="mixBut" value="Start" /></td> -->
+                        <!-- <td id="r3c4" class="button"><button id="resetButton">Reload Page</button></td> -->
                     </tr>
                 </table>
-                <!-- <table class="content">
-                    <tr class="result-details">
-                        <td class="time">
-                            <p>Time:</p>
-                            <span><b>60</b>s</span>
-                        </td>
-                        <td class="gwpm">
-                            <p>gWPM:</p>
-                            <span>0</span>
-                        </td>
-                        <td class="wpm">
-                            <p>nWPM:</p>
-                            <span>0</span>
-                        </td>
-                        <td class="gcpm">
-                            <p>gCPM:</p>
-                            <span>0</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cpm">
-                            <p>nCPM:</p>
-                            <span>0</span>
-                        </td>
-                        <td class="mistake">
-                            <p>Errors:</p>
-                            <span>0</span>
-                        </td>
-                        <td class="mistake">
-                            <p>Accuracy:</p>
-                            <span>0</span>
-                        </td>
-                        <td>
-                            <button>Try Again</button>
-                        </td>
-                    </tr>
-                </table> -->
             </section>
         </main>
         <footer></footer>

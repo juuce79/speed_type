@@ -1,111 +1,120 @@
 /* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
+} */
 body{
   display: flex;
-  padding: 0 10px;
+  /* padding: 0 10px; */
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: lightseagreen;
+  background: grey;
+  background-image: url("../img/typing.svg");
+  background-repeat: repeat;
 }
 ::selection{
   color: white;
   background: lightseagreen;
 }
 .table2 {
+  width: 560px;
+}
+.tableCopy {
   width: 600px;
+  text-align: center;
+}
+#copy {
+  text-align: center;
 }
 #r1c1 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r1c2 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r1c3 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r1c4 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c1 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c2 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c3 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c4 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c1 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c2 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c3 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c4 {
   border: none;
-  width: 150px;
-  line-height: 60px;
+  width: 140px;
+  line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
-#tryButton {
+/* #resetButton {
   display: inline-block;
   width: 100%;
   padding-top: 12.5%;
@@ -115,32 +124,50 @@ body{
   border-radius: 5px;
   border: solid lightseagreen 1px;
   box-shadow: 0 1px 10px rgb(40, 40, 40);
-}
+} */
 #r4c1 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r4c2 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
 #r4c3 {
   border: none;
-  width: 150px;
+  width: 140px;
   line-height: 30px;
   text-align: center;
   vertical-align: middle;
 }
+#r4c4 {
+  border: none;
+  width: 140px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+#mixBut {
+  display: inline-block;
+  width: 100%;
+  /* padding-top: 12.5%;
+  padding-bottom: 12.5%; */
+  color: white;
+  background-color: transparent;
+  /* border-radius: 5px; */
+  border: none;
+  /* box-shadow: 0 1px 10px rgb(40, 40, 40); */
+}
 .wrapper{
-  width: 770px;
-  padding: 35px;
-  background: white;
+  width: 600px;
+  padding: 20px;
+  background: whitesmoke;
   border-radius: 10px;
   box-shadow: 0 10px 30px black;
 }
@@ -157,32 +184,32 @@ body{
 .content-box {
   box-shadow: 0 1px 10px rgb(40, 40, 40);
 }
-.content-box .typing-text{
+.content-box .typing-text {
   overflow: hidden;
   max-height: 256px;
 }
-.typing-text::-webkit-scrollbar{
+.typing-text::-webkit-scrollbar {
   width: 0;
 }
-.typing-text p{
+.typing-text p {
   font-size: 21px;
-  text-align: justify;
+  text-align: left;
   letter-spacing: 1px;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
-.typing-text p span{
+.typing-text p span {
   position: relative;
 }
-.typing-text p span.correct{
+.typing-text p span.correct {
   color: green;
 }
-.typing-text p span.incorrect{
+.typing-text p span.incorrect {
   color: red;
   outline: 1px solid white;
   background: lightpink;
   border-radius: 4px;
 }
-.typing-text p span.active{
+.typing-text p span.active {
   color: blue;
   outline: 1px solid blue;
   background: lightblue;
@@ -272,7 +299,7 @@ li:not(:first-child) span{
   }
   .typing-text p{
     font-size: 19px;
-    text-align: justify;
+    text-align: left;
   }
   .content button{
     width: 100%;
@@ -298,7 +325,7 @@ li:not(:first-child) span{
   }
   .typing-text p{
     font-size: 18px;
-    text-align: justify;
+    text-align: left;
   }
   .result-details li{
     margin-bottom: 10px;

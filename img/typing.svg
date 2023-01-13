@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="typing.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="6.535797"
+     inkscape:cx="60.589397"
+     inkscape:cy="54.928267"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1413" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.498903;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1467"
+       width="23.8125"
+       height="10.583333"
+       x="1.3229166"
+       y="14.552083" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.584139;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1521"
+       width="18.479286"
+       height="12.925415"
+       x="3.9895229"
+       y="1.6149863" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 6.6145832,5.2916666 H 21.166666"
+       id="path1577" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 5.2916666,6.6145832 H 21.166666"
+       id="path1579" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 5.2916666,7.9374999 H 21.166666"
+       id="path1581" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 6.6145832,10.583333 H 21.166666"
+       id="path1583" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 5.2916666,11.90625 H 21.166666"
+       id="path1585" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.489913;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1587"
+       width="21.166666"
+       height="7.9375005"
+       x="2.645833"
+       y="15.875" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 2.6458331,18.520833 H 23.8125"
+       id="path1589" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 2.6458331,21.166667 H 23.8125"
+       id="path1591" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 5.2916664,15.875 v 7.9375"
+       id="path1593" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 7.9374997,15.875 v 7.9375"
+       id="path1595" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 10.583333,15.875 v 7.9375 0 h 2.645834 V 15.875 H 15.875 v 7.9375 h 2.645833 V 15.875 h 2.645833 v 7.9375"
+       id="path1597" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 5.2916666,13.229167 H 21.166666"
+       id="path1757" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 15.875,2.6458333 h 5.291666"
+       id="path1761" />
+  </g>
+</svg>
