@@ -10,32 +10,47 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Speed Type</title>
+        <title>Speed Typer</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/texts.js" defer></script>
         <script src="js/main.js" defer></script>
     </head>
     <body>
         <header>
+            <img id="speedtyper" src="img/speedtyper.svg" alt="Speed Typer">
         </header>
         <main>
             <section class="wrapper">
-                <label for="setts" >Settings:</label><br>
-                <select name="setts" id="setts">
-                    <option value="">Please select option:</option>
-                    <option value="punct">Correct Case & Punctuation</option>
-                    <option value="noPunct">Lower-Case & No Punctuation</option>
-                </select><br><br>
-                <label for="texts">Choose a text:</label><br>
-                <select name="texts" id="texts" disabled>
-                    <option value="">Please select option:</option>
-                    <option value="stardust">English: Stardust</option>
-                    <option value="love">English: Love</option>
-                    <option value="everlasting">English: Everlasting</option>
-                    <option value="njuta">Svenska: Njuta</option>
-                    <option value="ändring">Svenska: Ändring</option>
-                    <option value="världen">Svenska: Världen</option>
-                </select><br><br>
+                <table>
+                    <tr>
+                        <td id="settBox">
+                            <label id="labelSett" for="setts" >Settings:</label>
+                            <select name="setts" id="setts">
+                                <option value="">Please select option:</option>
+                                <option value="punct">Correct Case & Punctuation</option>
+                                <option value="noPunct">Lower-Case & No Punctuation</option>
+                            </select>
+                        </td>
+                        <td id="titleBox">
+                            <h3 id="textTitle">Stardust</h3>
+                            <h4 id="textAuthor">by Frank Curwen</h4>
+                            <p id="textStats"></p>
+                        </td>
+                        <td id="textBox">
+                            <label id="labelText" for="texts">Choose a text:</label>
+                            <select name="texts" id="texts" disabled>
+                                <option value="">Please select option:</option>
+                                <option value="stardust">English: Stardust</option>
+                                <option value="love">English: Love</option>
+                                <option value="everlasting">English: Everlasting</option>
+                                <option value="njuta">Svenska: Njuta</option>
+                                <option value="ändring">Svenska: Ändring</option>
+                                <option value="världen">Svenska: Världen</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
                 <table class="content-box table1">
                     <tr>
                         <td class="typing-text">
@@ -81,6 +96,11 @@
                 </table>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <hr>
+            <p id="copytext"><s>No copyright ©</s> Frank Curwen<br>
+                you are free to use, reuse, copy, and do whatever you would<br>
+                like with the code, text or any part of the website ❤️</p>
+        </footer>
     </body>
 </html>

@@ -11,6 +11,7 @@ setts = document.querySelector('#setts'),
 texts = document.querySelector('#texts');
 
 var audio = new Audio ("audio/timer.mp3"),
+wrong = new Audio ("audio/wrong.mp3"),
 resetButton = document.getElementById("resetButton"),
 playStopButton = document.getElementById("playStopButton"),
 mixBut = document.getElementById("mixBut"),
@@ -73,6 +74,7 @@ texts.addEventListener('change', () => {
 function loadParagraph() {
     Start()
     typingText.innerHTML = "";
+    document.getElementById("copy").value = "";
     paragraphs[0].split("").forEach(char => {
         let span = `<span>${char}</span>`
         typingText.innerHTML += span;
@@ -84,8 +86,9 @@ function loadParagraph() {
 
         if (pesc == "Correct Case & Punctuation"){
             Start();
-            texts.value = '';
+            // texts.value = '';
             typingText.innerHTML = "";
+            document.getElementById("copy").value = "";
             paragraphs[0].split("").forEach(char => {
                 let span = `<span>${char}</span>`
                 typingText.innerHTML += span;
@@ -94,10 +97,12 @@ function loadParagraph() {
                 const select = e.target;
                 // const value = select.value;
                 const desc = select.selectedOptions[0].text;
+                console.log(desc)
         
                 if (desc == "English: Stardust") {
                     Start();
                     typingText.innerHTML = "";
+                    document.getElementById("copy").value = "";
                     paragraphs[0].split("").forEach(char => {
                         let span = `<span>${char}</span>`
                         typingText.innerHTML += span;
@@ -107,6 +112,7 @@ function loadParagraph() {
                 else if (desc == "English: Love") {
                     Start();
                     typingText.innerHTML = "";
+                    document.getElementById("copy").value = "";
                     paragraphs[1].split("").forEach(char => {
                         let span = `<span>${char}</span>`
                         typingText.innerHTML += span;
@@ -116,6 +122,7 @@ function loadParagraph() {
                 else if (desc == "English: Everlasting") {
                     Start();
                     typingText.innerHTML = "";
+                    document.getElementById("copy").value = "";
                     paragraphs[2].split("").forEach(char => {
                         let span = `<span>${char}</span>`
                         typingText.innerHTML += span;
@@ -125,6 +132,7 @@ function loadParagraph() {
                 else if (desc == "Svenska: Njuta") {
                     Start();
                     typingText.innerHTML = "";
+                    document.getElementById("copy").value = "";
                     paragraphs[3].split("").forEach(char => {
                         let span = `<span>${char}</span>`
                         typingText.innerHTML += span;
@@ -134,6 +142,7 @@ function loadParagraph() {
                 else if (desc == "Svenska: Ändring") {
                     Start();
                     typingText.innerHTML = "";
+                    document.getElementById("copy").value = "";
                     paragraphs[4].split("").forEach(char => {
                         let span = `<span>${char}</span>`
                         typingText.innerHTML += span;
@@ -143,6 +152,7 @@ function loadParagraph() {
                 else if (desc == "Svenska: Världen") {
                     Start();
                     typingText.innerHTML = "";
+                    document.getElementById("copy").value = "";
                     paragraphs[5].split("").forEach(char => {
                         let span = `<span>${char}</span>`
                         typingText.innerHTML += span;
@@ -157,9 +167,10 @@ function loadParagraph() {
         }
         else if (pesc == "Lower-Case & No Punctuation") {
             Start();
-            texts.value = '';
+            // texts.value = '';
             typingText.innerHTML = "";
-            para2[0] = para2[0].replace(/[^a-zåäö0-9]+/gi, ' ');
+            document.getElementById("copy").value = "";
+            para2[0] = para2[0].replace(/[^a-zåäö]+/gi, ' ');
             para2[0] = para2[0].toLowerCase();
             para2[0].split("").forEach(char => {
                 let span = `<span>${char}</span>`
@@ -173,7 +184,8 @@ function loadParagraph() {
                 if (desc == "English: Stardust") {
                     Start();
                     typingText.innerHTML = "";
-                    para2[0] = para2[0].replace(/[^a-zåäö0-9]+/gi, ' ');
+                    document.getElementById("copy").value = "";
+                    para2[0] = para2[0].replace(/[^a-zåäö]+/gi, ' ');
                     para2[0] = para2[0].toLowerCase();
                     para2[0].split("").forEach(char => {
                         let span = `<span>${char}</span>`
@@ -184,7 +196,8 @@ function loadParagraph() {
                 else if (desc == "English: Love") {
                     Start();
                     typingText.innerHTML = "";
-                    para2[1] = para2[1].replace(/[^a-zåäö0-9]+/gi, ' ');
+                    document.getElementById("copy").value = "";
+                    para2[1] = para2[1].replace(/[^a-zåäö]+/gi, ' ');
                     para2[1] = para2[1].toLowerCase();
                     para2[1].split("").forEach(char => {
                         let span = `<span>${char}</span>`
@@ -195,7 +208,8 @@ function loadParagraph() {
                 else if (desc == "English: Everlasting") {
                     Start();
                     typingText.innerHTML = "";
-                    para2[2] = para2[2].replace(/[^a-zåäö0-9]+/gi, ' ');
+                    document.getElementById("copy").value = "";
+                    para2[2] = para2[2].replace(/[^a-zåäö]+/gi, ' ');
                     para2[2] = para2[2].toLowerCase();
                     para2[2].split("").forEach(char => {
                         let span = `<span>${char}</span>`
@@ -206,7 +220,8 @@ function loadParagraph() {
                 else if (desc == "Svenska: Njuta") {
                     Start();
                     typingText.innerHTML = "";
-                    para2[3] = para2[3].replace(/[^a-zåäö0-9]+/gi, ' ');
+                    document.getElementById("copy").value = "";
+                    para2[3] = para2[3].replace(/[^a-zåäö]+/gi, ' ');
                     para2[3] = para2[3].toLowerCase();
                     para2[3].split("").forEach(char => {
                         let span = `<span>${char}</span>`
@@ -217,7 +232,8 @@ function loadParagraph() {
                 else if (desc == "Svenska: Ändring") {
                     Start();
                     typingText.innerHTML = "";
-                    para2[4] = para2[4].replace(/[^a-zåäö0-9]+/gi, ' ');
+                    document.getElementById("copy").value = "";
+                    para2[4] = para2[4].replace(/[^a-zåäö]+/gi, ' ');
                     para2[4] = para2[4].toLowerCase();
                     para2[4].split("").forEach(char => {
                         let span = `<span>${char}</span>`
@@ -228,7 +244,8 @@ function loadParagraph() {
                 else if (desc == "Svenska: Världen") {
                     Start();
                     typingText.innerHTML = "";
-                    para2[5] = para2[5].replace(/[^a-zåäö0-9]+/gi, ' ');
+                    document.getElementById("copy").value = "";
+                    para2[5] = para2[5].replace(/[^a-zåäö]+/gi, ' ');
                     para2[5] = para2[5].toLowerCase();
                     para2[5].split("").forEach(char => {
                         let span = `<span>${char}</span>`
@@ -241,74 +258,57 @@ function loadParagraph() {
                 typingText.addEventListener("click", () => inpField.focus());
             });
         }
-        typingText.querySelectorAll("span")[0].classList.add("active");
-        document.addEventListener("keydown", () => inpField.focus());
-        typingText.addEventListener("click", () => inpField.focus());
     });
     typingText.querySelectorAll("span")[0].classList.add("active");
     document.addEventListener("keydown", () => inpField.focus());
     typingText.addEventListener("click", () => inpField.focus());
 }
 
-// function loadParagraph() {
-//     typingText.innerHTML = "";
-//     paragraphs[0].split("").forEach(char => {
-//         let span = `<span>${char}</span>`
-//         typingText.innerHTML += span;
-//     });
-  
-//     setts.addEventListener("change", e => {
-//         const selector = e.target;
-//         const pesc = selector.selectedOptions[0].text;
-  
-//         texts.addEventListener("change", e => {
-//             const select = e.target;
-//             const desc = select.selectedOptions[0].text;
-//             let index = 0;
-  
-            // switch (desc) {
-            //     case "English: Stardust":
-            //         index = 0;
-            //         break;
-            //     case "English: Love":
-            //         index = 1;
-            //         break;
-            //     case "English: Everlasting":
-            //         index = 2;
-            //         break;
-            //     case "Svenska: Njuta":
-            //         index = 3;
-            //         break;
-            //     case "Svenska: Ändring":
-            //         index = 4;
-            //         break;
-            //     case "Svenska: Världen":
-            //         index = 5;
-            //         break;
-            // }
-  
-//             typingText.innerHTML = "";
-//             let text = paragraphs[index];
-//             if (pesc === "Lower-Case & No Punctuation") {
-//                 text = text.replace(/[^a-zåäö0-9]+/gi, " ");
-//                 text = text.toLowerCase();
-//             }
-//             text.split("").forEach(char => {
-//                 let span = `<span>${char}</span>`;
-//                 typingText.innerHTML += span;
-//             });
-    
-//             typingText.querySelectorAll("span")[0].classList.add("active");
-//             document.addEventListener("keydown", () => inpField.focus());
-//             typingText.addEventListener("click", () => inpField.focus());
-//         });
-//     });
-// }
-
 function getWordCount(str) {
     return str.split(' ')
       .filter(function(n) { return n != '' })
       .length;
+}
+
+function countChars(str) {
+    return str.length;
+}
+
+var select = document.getElementById("texts");
+select.addEventListener("change", displaySelected);
+
+function displaySelected() {
+    var selectedOption = select.options[select.selectedIndex].text;
+    if (selectedOption == "English: Stardust") {
+        document.getElementById("textTitle").innerHTML = "Stardust";
+        document.getElementById("textAuthor").innerHTML = "by Frank Curwen";
+        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[0]) + " words, " + countChars(paragraphs[0]) + " characters)";
+    }
+    else if (selectedOption == "English: Love") {
+        document.getElementById("textTitle").innerHTML = "Love";
+        document.getElementById("textAuthor").innerHTML = "by Frank Curwen";
+        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[1]) + " words, " + countChars(paragraphs[1]) + " characters)";
+    }
+    else if (selectedOption == "English: Everlasting") {
+        document.getElementById("textTitle").innerHTML = "Everlasting";
+        document.getElementById("textAuthor").innerHTML = "by Frank Curwen";
+        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[2]) + " words, " + countChars(paragraphs[2]) + " characters)";
+    }
+    else if (selectedOption == "Svenska: Njuta") {
+        document.getElementById("textTitle").innerHTML = "Njuta";
+        document.getElementById("textAuthor").innerHTML = "av Frank Curwen";
+        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[3]) + " words, " + countChars(paragraphs[3]) + " characters)";
+    }
+    else if (selectedOption == "Svenska: Ändring") {
+        document.getElementById("textTitle").innerHTML = "Ändring";
+        document.getElementById("textAuthor").innerHTML = "av Frank Curwen";
+        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[4]) + " words, " + countChars(paragraphs[4]) + " characters)";
+    }
+    else if (selectedOption == "Svenska: Världen") {
+        document.getElementById("textTitle").innerHTML = "Världen";
+        document.getElementById("textAuthor").innerHTML = "av Frank Curwen";
+        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[5]) + " words, " + countChars(paragraphs[5]) + " characters)";
+    }
 }
 
 function initTyping() {
@@ -333,6 +333,7 @@ function initTyping() {
             if(characters[charIndex].innerText == typedChar) {
                 characters[charIndex].classList.add("correct");
             } else {
+                wrong.play();
                 mistakes++;
                 characters[charIndex].classList.add("incorrect");
             }
@@ -341,10 +342,11 @@ function initTyping() {
         characters.forEach(span => span.classList.remove("active"));
         characters[charIndex].classList.add("active");
 
-        let wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60);
+        let wpm = Math.round(((charIndex - mistakes) / getWordCount()) / (maxTime - timeLeft) * maxTime);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        let gwpm = Math.round(((charIndex)  / 5) / (maxTime - timeLeft) * 60);
+        let gwpm = Math.round(((charIndex) / getWordCount()) / (maxTime - timeLeft) * maxTime);
         gwpm = gwpm < 0 || !gwpm || gwpm === Infinity ? 0 : gwpm;
+        console.log(charIndex)
         
         wpmTag.innerText = wpm;
         gwpmTag.innerText = gwpm;
@@ -370,9 +372,9 @@ function initTimer() {
     if(timeLeft > 0) {
         timeLeft--;
         timeTag.innerText = timeLeft;
-        let wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60);
+        let wpm = Math.round(((charIndex - mistakes) / getWordCount()) / (maxTime - timeLeft) * maxTime);
         wpmTag.innerText = wpm;
-        let gwpm = Math.round(((charIndex)  / 5) / (maxTime - timeLeft) * 60);
+        let gwpm = Math.round(((charIndex) / getWordCount()) / (maxTime - timeLeft) * maxTime);
         gwpmTag.innerText = gwpm;
     } else {
         clearInterval(timer);
@@ -398,7 +400,6 @@ function resetGame() {
 }
 function resetGame2() {
     // window.location.reload();
-    // loadParagraph();
     clearInterval(timer);
     timeLeft = maxTime;
     charIndex = mistakes = isTyping = 0;
@@ -411,6 +412,7 @@ function resetGame2() {
     gcpmTag.innerText = 0;
     accuracy.innerText = "100%";
     audio.pause()
+    // loadParagraph();
 }
 
 function Start(){
@@ -448,6 +450,7 @@ function Stop(){
     mixBut.value = "Start";
     clearInterval(timer);
     audio.pause();
+    document.getElementById("copy").value = "";
     window.onkeydown = function(event) {
         event.preventDefault();
     };

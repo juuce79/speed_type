@@ -6,16 +6,62 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 } */
+header {
+  height: 110px; /* you can set the height of the image here */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  max-width: 220px;
+  height: auto;
+}
+
 body{
   display: flex;
   /* padding: 0 10px; */
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: grey;
+  background: rgb(20, 20, 20);
   background-image: url("../img/typing.svg");
   background-repeat: repeat;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#settBox, #titleBox, #textBox {
+  width: 200px
+}
+
+#labelSett, #labelText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#setts, #texts {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+#textTitle, #textAuthor, #textStats {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 ::selection{
   color: white;
   background: lightseagreen;
@@ -33,84 +79,84 @@ body{
 #r1c1 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r1c2 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r1c3 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r1c4 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c1 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c2 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c3 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r2c4 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c1 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c2 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c3 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r3c4 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
@@ -128,28 +174,28 @@ body{
 #r4c1 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r4c2 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r4c3 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
 #r4c4 {
   border: none;
   width: 140px;
-  line-height: 30px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
