@@ -23,7 +23,30 @@ let timer,
 maxTime = 60,
 timeLeft = maxTime,
 charIndex = mistakes = isTyping = 0,
-para2 = JSON.parse(JSON.stringify(paragraphs));
+tit1 = Object.keys(paragraphss)[0],
+auth1 = Object.keys(Object.values(paragraphss)[0])[0],
+tex1a = Object.values(Object.values(paragraphss)[0])[0],
+tex1b = Object.values(Object.values(paragraphss)[0])[1],
+tit2 = Object.keys(paragraphss)[1],
+auth2 = Object.keys(Object.values(paragraphss)[1])[0],
+tex2a = Object.values(Object.values(paragraphss)[1])[0],
+tex2b = Object.values(Object.values(paragraphss)[1])[1],
+tit3 = Object.keys(paragraphss)[2],
+auth3 = Object.keys(Object.values(paragraphss)[2])[0],
+tex3a = Object.values(Object.values(paragraphss)[2])[0],
+tex3b = Object.values(Object.values(paragraphss)[2])[1],
+tit4 = Object.keys(paragraphss)[3],
+auth4 = Object.keys(Object.values(paragraphss)[3])[0],
+tex4a = Object.values(Object.values(paragraphss)[3])[0],
+tex4b = Object.values(Object.values(paragraphss)[3])[1],
+tit5 = Object.keys(paragraphss)[4],
+auth5 = Object.keys(Object.values(paragraphss)[4])[0],
+tex5a = Object.values(Object.values(paragraphss)[4])[0],
+tex5b = Object.values(Object.values(paragraphss)[4])[1],
+tit6 = Object.keys(paragraphss)[5],
+auth6 = Object.keys(Object.values(paragraphss)[5])[0],
+tex6a = Object.values(Object.values(paragraphss)[5])[0],
+tex6b = Object.values(Object.values(paragraphss)[5])[1];
 
 function settingSelect(obj) {
     var selection;
@@ -51,6 +74,13 @@ setts.addEventListener('change', () => {
     }
 });
 
+var selectedSett = document.getElementById("setts");
+
+selectedSett.addEventListener("change", function() {
+    var selectedSettOption = selectedSett.options[selectedSett.selectedIndex].value;
+    sessionStorage.setItem("selectedSettOption", selectedSettOption);
+});
+
 function textSelect(obj) {
     var selection;
     var selectedOption = obj.options[obj.selectedIndex];
@@ -70,194 +100,113 @@ function textSelect(obj) {
 texts.addEventListener('change', () => {
     textSelect(texts);
 });
+var selectedSettOption = sessionStorage.getItem("selectedSettOption");
+var selectedTex = document.getElementById("texts");
+
+selectedTex.addEventListener("change", function() {
+    var selectedTexOption = selectedTex.options[selectedTex.selectedIndex].value;
+    var selectedSettOption = sessionStorage.getItem("selectedSettOption");
+    if (selectedTexOption == "stardust" && selectedSettOption == "punct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit1);
+        sessionStorage.setItem("selectedTexAuthor", auth1);
+        sessionStorage.setItem("selectedTexText", tex1a);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "stardust" && selectedSettOption == "noPunct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit1);
+        sessionStorage.setItem("selectedTexAuthor", auth1);
+        sessionStorage.setItem("selectedTexText", tex1b);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "love" && selectedSettOption == "punct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit2);
+        sessionStorage.setItem("selectedTexAuthor", auth2);
+        sessionStorage.setItem("selectedTexText", tex2a);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "love" && selectedSettOption == "noPunct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit2);
+        sessionStorage.setItem("selectedTexAuthor", auth2);
+        sessionStorage.setItem("selectedTexText", tex2b);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "everlasting" && selectedSettOption == "punct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit3);
+        sessionStorage.setItem("selectedTexAuthor", auth3);
+        sessionStorage.setItem("selectedTexText", tex3a);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "everlasting" && selectedSettOption == "noPunct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit3);
+        sessionStorage.setItem("selectedTexAuthor", auth3);
+        sessionStorage.setItem("selectedTexText", tex3b);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "njuta" && selectedSettOption == "punct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit4);
+        sessionStorage.setItem("selectedTexAuthor", auth4);
+        sessionStorage.setItem("selectedTexText", tex4a);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "njuta" && selectedSettOption == "noPunct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit4);
+        sessionStorage.setItem("selectedTexAuthor", auth4);
+        sessionStorage.setItem("selectedTexText", tex4b);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "ändring" && selectedSettOption == "punct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit5);
+        sessionStorage.setItem("selectedTexAuthor", auth5);
+        sessionStorage.setItem("selectedTexText", tex5a);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "ändring" && selectedSettOption == "noPunct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit5);
+        sessionStorage.setItem("selectedTexAuthor", auth5);
+        sessionStorage.setItem("selectedTexText", tex5b);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "världen" && selectedSettOption == "punct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit6);
+        sessionStorage.setItem("selectedTexAuthor", auth6);
+        sessionStorage.setItem("selectedTexText", tex6a);
+        location.reload(true);
+    }
+    else if (selectedTexOption == "världen" && selectedSettOption == "noPunct") {
+        sessionStorage.setItem("selectedTexOption", selectedTexOption);
+        sessionStorage.setItem("selectedTexTitle", tit6);
+        sessionStorage.setItem("selectedTexAuthor", auth6);
+        sessionStorage.setItem("selectedTexText", tex6b);
+        location.reload(true);
+    }
+});
+
+var texSel = sessionStorage.getItem("selectedTexText");
+var wordCount = getWordCount(texSel);
+var charCount = countChars(texSel);
+document.getElementById("textTitle").textContent = sessionStorage.getItem("selectedTexTitle");
+document.getElementById("textAuthor").textContent = sessionStorage.getItem("selectedTexAuthor");
+document.getElementById("textStats").textContent = "(" + wordCount + " words, " + charCount + " characters)";
 
 function loadParagraph() {
     Start()
     typingText.innerHTML = "";
     document.getElementById("copy").value = "";
-    paragraphs[0].split("").forEach(char => {
+    var textt = sessionStorage.getItem("selectedTexText");
+    textt.split("").forEach(char => {
         let span = `<span>${char}</span>`
         typingText.innerHTML += span;
-    });
-
-    setts.addEventListener('change', (e) => {
-        const selector = e.target;
-        const pesc = selector.selectedOptions[0].text;
-
-        if (pesc == "Correct Case & Punctuation"){
-            Start();
-            // texts.value = '';
-            typingText.innerHTML = "";
-            document.getElementById("copy").value = "";
-            paragraphs[0].split("").forEach(char => {
-                let span = `<span>${char}</span>`
-                typingText.innerHTML += span;
-            });
-            texts.addEventListener('change', (e) => {
-                const select = e.target;
-                // const value = select.value;
-                const desc = select.selectedOptions[0].text;
-                console.log(desc)
-        
-                if (desc == "English: Stardust") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    paragraphs[0].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[0]));
-                }
-                else if (desc == "English: Love") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    paragraphs[1].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[1]));
-                }
-                else if (desc == "English: Everlasting") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    paragraphs[2].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[2]));
-                }
-                else if (desc == "Svenska: Njuta") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    paragraphs[3].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[3]));
-                }
-                else if (desc == "Svenska: Ändring") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    paragraphs[4].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[4]));
-                }
-                else if (desc == "Svenska: Världen") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    paragraphs[5].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[5]));
-                }
-                
-                typingText.querySelectorAll("span")[0].classList.add("active");
-                document.addEventListener("keydown", () => inpField.focus());
-                typingText.addEventListener("click", () => inpField.focus());
-                });
-        }
-        else if (pesc == "Lower-Case & No Punctuation") {
-            Start();
-            // texts.value = '';
-            typingText.innerHTML = "";
-            document.getElementById("copy").value = "";
-            para2[0] = para2[0].replace(/[^a-zåäö]+/gi, ' ');
-            para2[0] = para2[0].toLowerCase();
-            para2[0].split("").forEach(char => {
-                let span = `<span>${char}</span>`
-                typingText.innerHTML += span;
-            });
-            texts.addEventListener('change', (e) => {
-                const select = e.target;
-                // const value = select.value;
-                const desc = select.selectedOptions[0].text;
-        
-                if (desc == "English: Stardust") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    para2[0] = para2[0].replace(/[^a-zåäö]+/gi, ' ');
-                    para2[0] = para2[0].toLowerCase();
-                    para2[0].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[0]));
-                }
-                else if (desc == "English: Love") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    para2[1] = para2[1].replace(/[^a-zåäö]+/gi, ' ');
-                    para2[1] = para2[1].toLowerCase();
-                    para2[1].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[1]));
-                }
-                else if (desc == "English: Everlasting") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    para2[2] = para2[2].replace(/[^a-zåäö]+/gi, ' ');
-                    para2[2] = para2[2].toLowerCase();
-                    para2[2].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[2]));
-                }
-                else if (desc == "Svenska: Njuta") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    para2[3] = para2[3].replace(/[^a-zåäö]+/gi, ' ');
-                    para2[3] = para2[3].toLowerCase();
-                    para2[3].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[3]));
-                }
-                else if (desc == "Svenska: Ändring") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    para2[4] = para2[4].replace(/[^a-zåäö]+/gi, ' ');
-                    para2[4] = para2[4].toLowerCase();
-                    para2[4].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[4]));
-                }
-                else if (desc == "Svenska: Världen") {
-                    Start();
-                    typingText.innerHTML = "";
-                    document.getElementById("copy").value = "";
-                    para2[5] = para2[5].replace(/[^a-zåäö]+/gi, ' ');
-                    para2[5] = para2[5].toLowerCase();
-                    para2[5].split("").forEach(char => {
-                        let span = `<span>${char}</span>`
-                        typingText.innerHTML += span;
-                    });
-                // console.log('Total words: '+getWordCount(paragraphs[5]));
-                }
-                typingText.querySelectorAll("span")[0].classList.add("active");
-                document.addEventListener("keydown", () => inpField.focus());
-                typingText.addEventListener("click", () => inpField.focus());
-            });
-        }
     });
     typingText.querySelectorAll("span")[0].classList.add("active");
     document.addEventListener("keydown", () => inpField.focus());
@@ -272,43 +221,6 @@ function getWordCount(str) {
 
 function countChars(str) {
     return str.length;
-}
-
-var select = document.getElementById("texts");
-select.addEventListener("change", displaySelected);
-
-function displaySelected() {
-    var selectedOption = select.options[select.selectedIndex].text;
-    if (selectedOption == "English: Stardust") {
-        document.getElementById("textTitle").innerHTML = "Stardust";
-        document.getElementById("textAuthor").innerHTML = "by Frank Curwen";
-        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[0]) + " words, " + countChars(paragraphs[0]) + " characters)";
-    }
-    else if (selectedOption == "English: Love") {
-        document.getElementById("textTitle").innerHTML = "Love";
-        document.getElementById("textAuthor").innerHTML = "by Frank Curwen";
-        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[1]) + " words, " + countChars(paragraphs[1]) + " characters)";
-    }
-    else if (selectedOption == "English: Everlasting") {
-        document.getElementById("textTitle").innerHTML = "Everlasting";
-        document.getElementById("textAuthor").innerHTML = "by Frank Curwen";
-        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[2]) + " words, " + countChars(paragraphs[2]) + " characters)";
-    }
-    else if (selectedOption == "Svenska: Njuta") {
-        document.getElementById("textTitle").innerHTML = "Njuta";
-        document.getElementById("textAuthor").innerHTML = "av Frank Curwen";
-        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[3]) + " words, " + countChars(paragraphs[3]) + " characters)";
-    }
-    else if (selectedOption == "Svenska: Ändring") {
-        document.getElementById("textTitle").innerHTML = "Ändring";
-        document.getElementById("textAuthor").innerHTML = "av Frank Curwen";
-        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[4]) + " words, " + countChars(paragraphs[4]) + " characters)";
-    }
-    else if (selectedOption == "Svenska: Världen") {
-        document.getElementById("textTitle").innerHTML = "Världen";
-        document.getElementById("textAuthor").innerHTML = "av Frank Curwen";
-        document.getElementById("textStats").innerHTML = "(" + getWordCount(paragraphs[5]) + " words, " + countChars(paragraphs[5]) + " characters)";
-    }
 }
 
 function initTyping() {
@@ -342,11 +254,11 @@ function initTyping() {
         characters.forEach(span => span.classList.remove("active"));
         characters[charIndex].classList.add("active");
 
-        let wpm = Math.round(((charIndex - mistakes) / getWordCount()) / (maxTime - timeLeft) * maxTime);
+        let wpm = Math.round(((charIndex - mistakes) / (charCount / wordCount)) / (maxTime - timeLeft) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        let gwpm = Math.round(((charIndex) / getWordCount()) / (maxTime - timeLeft) * maxTime);
+        let gwpm = Math.round(((charIndex) / (charCount / wordCount)) / (maxTime - timeLeft) * 60);
         gwpm = gwpm < 0 || !gwpm || gwpm === Infinity ? 0 : gwpm;
-        console.log(charIndex)
+        console.log((charCount / wordCount))
         
         wpmTag.innerText = wpm;
         gwpmTag.innerText = gwpm;
@@ -372,34 +284,17 @@ function initTimer() {
     if(timeLeft > 0) {
         timeLeft--;
         timeTag.innerText = timeLeft;
-        let wpm = Math.round(((charIndex - mistakes) / getWordCount()) / (maxTime - timeLeft) * maxTime);
+        let wpm = Math.round(((charIndex - mistakes) / (charCount / wordCount)) / (maxTime - timeLeft) * 60);
         wpmTag.innerText = wpm;
-        let gwpm = Math.round(((charIndex) / getWordCount()) / (maxTime - timeLeft) * maxTime);
+        let gwpm = Math.round(((charIndex) / (charCount / wordCount)) / (maxTime - timeLeft) * 60);
         gwpmTag.innerText = gwpm;
     } else {
+        Stop()
         clearInterval(timer);
     }
 }
 
-function resetGame() {
-    // window.location.reload();
-    loadParagraph();
-    clearInterval(timer);
-    timeLeft = maxTime;
-    charIndex = mistakes = isTyping = 0;
-    inpField.value = "";
-    timeTag.innerText = timeLeft;
-    wpmTag.innerText = 0;
-    gwpmTag.innerText = 0;
-    mistakeTag.innerText = 0;
-    cpmTag.innerText = 0;
-    gcpmTag.innerText = 0;
-    accuracy.innerText = "100%";
-    audio.pause();
-    Stop();
-}
 function resetGame2() {
-    // window.location.reload();
     clearInterval(timer);
     timeLeft = maxTime;
     charIndex = mistakes = isTyping = 0;
@@ -412,39 +307,24 @@ function resetGame2() {
     gcpmTag.innerText = 0;
     accuracy.innerText = "100%";
     audio.pause()
-    // loadParagraph();
 }
 
 function Start(){
-    console.log("Started");
     r4c4.style.background = "url('img/stop.svg')";
     r4c4.style.backgroundRepeat = "no-repeat";
-    r4c4.style.backgroundPosition = "center center"
+    r4c4.style.backgroundPosition = "center center";
     mixBut.removeEventListener("click", Start);
     mixBut.addEventListener("click", Stop);
     mixBut.value = "Stop";
-    // loadParagraph();
-    // clearInterval(timer);
-    // timeLeft = maxTime;
-    // charIndex = mistakes = isTyping = 0;
-    // inpField.value = "";
-    // timeTag.innerText = timeLeft;
-    // wpmTag.innerText = 0;
-    // gwpmTag.innerText = 0;
-    // mistakeTag.innerText = 0;
-    // cpmTag.innerText = 0;
-    // gcpmTag.innerText = 0;
-    // accuracy.innerText = "100%";
     resetGame2();
     audio.pause();
     window.onkeydown = null;
 }
 
 function Stop(){
-    console.log("Stopped");
     r4c4.style.background = "url('img/start.svg')";
     r4c4.style.backgroundRepeat = "no-repeat";
-    r4c4.style.backgroundPosition = "center center"
+    r4c4.style.backgroundPosition = "center center";
     mixBut.removeEventListener("click", Stop);
     mixBut.addEventListener("click", Start);
     mixBut.value = "Start";
@@ -454,6 +334,9 @@ function Stop(){
     window.onkeydown = function(event) {
         event.preventDefault();
     };
+    mixBut.addEventListener("click", function(){
+        location.reload(true);
+    });
 }
 
 mixBut.addEventListener("click", Start);
@@ -463,5 +346,3 @@ r4c4.style.backgroundPosition = "center center"
 
 loadParagraph();
 inpField.addEventListener("input", initTyping);
-// resetButton.addEventListener("click", resetGame);
-// playStopButton.addEventListener("click", resetGame);
