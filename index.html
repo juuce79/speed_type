@@ -5,7 +5,7 @@
 <!-- frcu2200@student.miun.se -->
 
 <!-- document head including language, viewport for responsive design,
-     title and links to favicon, css stylesheet and JavaScript -->
+     title and links to css stylesheet and JavaScript -->
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -16,6 +16,7 @@
         <script src="js/main.js" defer></script>
     </head>
     <body>
+        <!-- header image -->
         <header>
             <img id="speedtyper" src="img/speedtyper.svg" alt="Speed Typer">
         </header>
@@ -23,21 +24,24 @@
             <section class="wrapper">
                 <table>
                     <tr>
-                        <td id="settBox">
-                            <label id="labelSett" for="setts" >Settings:</label>
-                            <select name="setts" id="setts">
+                        <!-- dropdown menu for settings -->
+                        <td id="settingsBox">
+                            <label id="settingsLabel" for="settings">Settings:</label>
+                            <select name="settings" id="settings">
                                 <option value="">Please select option:</option>
-                                <option value="punct">Correct Case & Punctuation</option>
-                                <option value="noPunct">Lower-Case & No Punctuation</option>
+                                <option value="level1">Easy: No Punctuation</option>
+                                <option value="level2">Difficult: Punctuation</option>
                             </select>
                         </td>
+                        <!-- text title, author and statistics, this is populated from JavaScript according to text dropdown -->
                         <td id="titleBox">
                             <h3 id="textTitle"></h3>
                             <h4 id="textAuthor"></h4>
                             <p id="textStats"></p>
                         </td>
+                        <!-- dropdown menu for the texts -->
                         <td id="textBox">
-                            <label id="labelText" for="texts">Choose a text:</label>
+                            <label id="textLabel" for="texts">Choose a text:</label>
                             <select name="texts" id="texts" disabled>
                                 <option value="">Please select option:</option>
                                 <option value="stardust">English: Stardust</option>
@@ -51,8 +55,9 @@
                     </tr>
                 </table>
                 <br>
-                <table class="content-box table1">
+                <table class="content-box">
                     <tr>
+                        <!-- the main text box. this is populated from JavaScript according to which text is chosen -->
                         <td class="typing-text">
                             <input type="text" id="paragraph-text" name="paragraph-text" class="input-field"><p></p>
                         </td>
@@ -60,12 +65,14 @@
                 </table><br>
                 <table class="tableCopy">
                     <tr>
+                        <!-- this is where you type -->
                         <td class="typing-text2">
                             <input type="text" id="copy" name="copy" placeholder="type here to begin...">
                         </td>
                     </tr>
                 </table><br>
-                <table class="table2">
+                <!-- this is an evenly spaced table for all statistics and restart button -->
+                <table class="table">
                     <tr class="result-details">
                         <td id="r1c1" class="time">Time:</td>
                         <td id="r1c2" class="gwpm">Gross WPM:</td>
@@ -82,22 +89,19 @@
                         <td id="r3c1" class="cpm">Net CPM:</td>
                         <td id="r3c2" class="mistake">Errors:</td>
                         <td id="r3c3" class="accuracy">Accuracy:</td>
-                        <!-- <td id="r3c4" class="button"><button id="resetButton">Reload Page</button></td> -->
-                        <td id="r4c4" rowspan="2"><input type="button" id="mixBut" value="Start"/></td>
+                        <td id="r4c4" rowspan="2"><input type="button" id="startStopButton" value="Start"></td>
                     </tr>
                     <tr class="result-details">
                         <td id="r4c1" class="cpm"><span>0</span></td>
                         <td id="r4c2" class="mistake"><span>0</span></td>
                         <td id="r4c3" class="accuracy"><span>100%</span></td>
-                        <!-- <td id="r4c4" class="button"><button id="playStopButton">Restart / Stop</button></td> -->
-                        <!-- <td id="r4c4"><input type="button" id="mixBut" value="Start" /></td> -->
-                        <!-- <td id="r3c4" class="button"><button id="resetButton">Reload Page</button></td> -->
                     </tr>
                 </table>
             </section>
         </main>
         <footer>
             <hr>
+            <!-- footer text -->
             <p id="copytext"><s>No copyright ©</s> Frank Curwen<br>
                 you are free to use, reuse, copy, and do whatever you would<br>
                 like with the code, text or any part of the website ❤️</p>

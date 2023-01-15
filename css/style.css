@@ -1,28 +1,6 @@
-/* Import Google Font - Poppins */
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-} */
-header {
-  height: 110px; /* you can set the height of the image here */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-img {
-  position: absolute;
-  top: 0;
-  max-width: 220px;
-  height: auto;
-}
-
+/* body properties */
 body{
   display: flex;
-  /* padding: 0 10px; */
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -31,6 +9,27 @@ body{
   background-repeat: repeat;
 }
 
+/* header properties */
+header {
+  height: 110px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* header image properties */
+img {
+  position: absolute;
+  top: 0;
+  max-width: 330px;
+  height: auto;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* footer properties */
 footer {
   position: absolute;
   bottom: 0;
@@ -40,176 +39,73 @@ footer {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#settBox, #titleBox, #textBox {
+/* properties for the two dropdowns and the text title */
+#settingsBox, #titleBox, #textBox {
   width: 200px
 }
 
-#labelSett, #labelText {
+/* properties for the dropdown labels */
+#settingsLabel, #textLabel {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#setts, #texts {
+/* properties for the text inside the dropdowns */
+#settings, #texts {
   margin: 0 auto;
   display: block;
   text-align: center;
 }
 
+/* properties for the text title, author and stats */
 #textTitle, #textAuthor, #textStats {
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
 }
 
+/* color of the current character */
 ::selection{
   color: white;
   background: lightseagreen;
 }
-.table2 {
+
+/* table width */
+.table {
   width: 560px;
 }
+
+/* input field under text properties */
 .tableCopy {
   width: 600px;
   text-align: center;
 }
+
+/* text properties inside the input field */
 #copy {
   text-align: center;
 }
-#r1c1 {
+
+/* statistics properties */
+#r1c1, #r1c2, #r1c3, #r1c4, #r2c1, #r2c2, #r2c3, #r2c4, #r3c1, #r3c2, #r3c3, #r3c4, #r4c1, #r4c2, #r4c3, #r4c4 {
   border: none;
   width: 140px;
   line-height: 20px;
   text-align: center;
   vertical-align: middle;
 }
-#r1c2 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r1c3 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r1c4 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r2c1 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r2c2 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r2c3 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r2c4 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r3c1 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r3c2 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r3c3 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r3c4 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-/* #resetButton {
+
+/* start/stop button properties */
+#startStopButton {
   display: inline-block;
   width: 100%;
-  padding-top: 12.5%;
-  padding-bottom: 12.5%;
-  color: white;
-  background-color: lightseagreen;
-  border-radius: 5px;
-  border: solid lightseagreen 1px;
-  box-shadow: 0 1px 10px rgb(40, 40, 40);
-} */
-#r4c1 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r4c2 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r4c3 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#r4c4 {
-  border: none;
-  width: 140px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-#mixBut {
-  display: inline-block;
-  width: 100%;
-  /* padding-top: 12.5%;
-  padding-bottom: 12.5%; */
   color: white;
   background-color: transparent;
-  /* border-radius: 5px; */
   border: none;
-  /* box-shadow: 0 1px 10px rgb(40, 40, 40); */
 }
+
+/* properties of the white background that wraps all the text (except for header and footer) */
 .wrapper{
   width: 600px;
   padding: 20px;
@@ -217,66 +113,77 @@ footer {
   border-radius: 10px;
   box-shadow: 0 10px 30px black;
 }
+
+/* properties for invisible input field (typing over text) */
 .wrapper .input-field{
   opacity: 0;
   z-index: -999;
   position: absolute;
 }
+
+/* text properties */
 .wrapper .content-box{
   padding: 13px 20px 0;
   border-radius: 10px;
-  /* border: 1px solid grey; */
 }
+
+/* text properties */
 .content-box {
   box-shadow: 0 1px 10px rgb(40, 40, 40);
 }
+
+/* text properties */
 .content-box .typing-text {
   overflow: hidden;
   max-height: 256px;
 }
+
+/* hiding scrollbar in text */
 .typing-text::-webkit-scrollbar {
-  width: 0;
+  width: 0 !important;
+  background: transparent;
 }
+
+/* hiding scrollbar on page */
+::-webkit-scrollbar {
+  width: 0 !important;
+  background: transparent;
+}
+
+/* text properties */
 .typing-text p {
   font-size: 21px;
   text-align: left;
   letter-spacing: 1px;
-  /* word-break: break-all; */
 }
+
+/* text properties */
 .typing-text p span {
   position: relative;
 }
+
+/* properties when typing text is correct */
 .typing-text p span.correct {
   color: green;
 }
+
+/* properties when typing text is incorrect */
 .typing-text p span.incorrect {
   color: red;
   outline: 1px solid white;
   background: lightpink;
   border-radius: 4px;
 }
+
+/* properties for active character */
 .typing-text p span.active {
   color: blue;
   outline: 1px solid blue;
   background: lightblue;
   border-radius: 4px;
 }
-/* .typing-text p span.active::before{
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  border-radius: 5px;
-  animation: blink 1s ease-in-out infinite;
-}
-@keyframes blink{
-  50%{ 
-    opacity: 1; 
-  }
-} */
+
+/* more text properties */
 .content-box .content{
   margin-top: 17px;
   display: flex;
@@ -286,53 +193,8 @@ footer {
   justify-content: space-between;
   border-top: 1px solid #bfbfbf;
 }
-.content button{
-  outline: none;
-  border: none;
-  width: 105px;
-  color: #fff;
-  padding: 8px 0;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  background: #17A2B8;
-  transition: transform 0.3s ease;
-}
-.content button:active{
-  transform: scale(0.97);
-}
-.content .result-details{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: calc(100% - 140px);
-  justify-content: space-between;
-}
-.result-details li{
-  display: flex;
-  height: 20px;
-  list-style: none;
-  position: relative;
-  align-items: center;
-}
-.result-details li:not(:first-child){
-  padding-left: 22px;
-  border-left: 1px solid #bfbfbf;
-}
-.result-details li p{
-  font-size: 19px;
-}
-.result-details li span{
-  display: block;
-  font-size: 20px;
-  margin-left: 10px;
-}
-li span b{
-  font-weight: 500;
-}
-li:not(:first-child) span{
-  font-weight: 500;
-}
+
+/* properties when window gets smaller */
 @media (max-width: 745px) {
   .wrapper{
     padding: 20px;
@@ -347,24 +209,9 @@ li:not(:first-child) span{
     font-size: 19px;
     text-align: left;
   }
-  .content button{
-    width: 100%;
-    font-size: 15px;
-    padding: 10px 0;
-    margin-top: 20px;
-  }
-  .content .result-details{
-    width: 100%;
-  }
-  .result-details li:not(:first-child){
-    border-left: 0;
-    padding: 0;
-  }
-  .result-details li p, 
-  .result-details li span{
-    font-size: 17px;
-  }
 }
+
+/* properties when window gets even smaller */
 @media (max-width: 518px) {
   .wrapper .content-box{
     padding: 10px 15px 0;
@@ -372,11 +219,5 @@ li:not(:first-child) span{
   .typing-text p{
     font-size: 18px;
     text-align: left;
-  }
-  .result-details li{
-    margin-bottom: 10px;
-  }
-  .content button{
-    margin-top: 10px;
   }
 }
